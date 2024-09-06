@@ -1,69 +1,113 @@
-.banner{
+/* Global reset and body style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #f5f5f5;
+}
+
+/* Neon Color Animation - cycling through vibrant colors */
+@keyframes neonColorCycle {
+    0% {
+        box-shadow: 0 0 15px #00ff95, 0 0 30px #00ff95;
+        color: #00ff95;
+    }
+    25% {
+        box-shadow: 0 0 15px #00faff, 0 0 30px #00faff;
+        color: #00faff;
+    }
+    50% {
+        box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+        color: #ff00ff;
+    }
+    75% {
+        box-shadow: 0 0 15px #ff0095, 0 0 30px #ff0095;
+        color: #ff0095;
+    }
+    100% {
+        box-shadow: 0 0 15px #00ff95, 0 0 30px #00ff95;
+        color: #00ff95;
+    }
+}
+
+/* Neon Selection */
+::selection {
+    background: #00ff95;
+    color: #fff;
+}
+
+/* Banner */
+.banner {
     width: 100%;
     height: 400px;
     position: relative;
-    background: #e7e7e7;
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(45deg, #00ff95, #00faff);
+    box-shadow: 0 0 30px #00ff95;
+    animation: neonColorCycle 8s infinite; /* Apply color cycling */
 }
 
-.banner-upload-btn{
+/* Neon Upload Button */
+.banner-upload-btn {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background 0.3s;
+    animation: neonColorCycle 8s infinite;
 }
 
-.banner-upload-btn img{
+.banner-upload-btn img {
     width: 20px;
+    filter: invert(1);
 }
 
-.blog{
+/* Blog Container */
+.blog {
     width: 70vw;
     min-width: 400px;
-    height: 100px;
-    display: block;
     margin: auto;
     padding: 50px 0;
+    color: #f5f5f5;
 }
 
-textarea::-webkit-scrollbar{
-    width: 10px;
-}
-
-textarea::-webkit-scrollbar-thumb{
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
+/* Neon Textarea */
 .title,
-.article{
+.article {
     width: 100%;
     min-height: 100px;
-    height: auto;
     outline: none;
     font-size: 50px;
     font-weight: 600;
-    color: #2d2d2d;
-    resize: none;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
     border: none;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2), 0 0 15px #00ff95;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 .title::placeholder,
-.article::placeholder{
-    color: #2d2d2d;
+.article::placeholder {
+    color: #00ff95;
 }
 
-.article{
+/* Article Styles */
+.article {
     height: 500px;
     font-size: 20px;
     margin-top: 20px;
@@ -73,28 +117,62 @@ textarea::-webkit-scrollbar-thumb{
     white-space: pre-wrap;
 }
 
-.blog-options{
+/* Scrollbar for textarea */
+textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 149, 0.5);
+    border-radius: 10px;
+}
+
+/* Blog Options */
+.blog-options {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    background: #fff;
-    z-index: 9;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn{
+/* Button Styling */
+.btn {
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.btn.grey{
-    background: #a5a5a5;
-    color: #fff;
+/* Neon Green Button */
+.btn.grey {
+    background: #00ff95;
+    color: #000;
     margin-left: 20px;
-    font-size: 14px;
+    box-shadow: 0 0 15px #00ff95;
+}
+
+.btn.grey:hover {
+    background: #00faff;
+    box-shadow: 0 0 25px #00faff;
+}
+
+/* Dark Button */
+.btn.dark {
+    background: #1b1b1b;
+    color: #fff;
+    box-shadow: 0 0 15px #00ff95;
+}
+
+.btn.dark:hover {
+    background: #333;
+    box-shadow: 0 0 25px #00faff;
 }
