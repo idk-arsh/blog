@@ -1,12 +1,15 @@
 const blogSection = document.querySelector('.blogs-section');
 
+// Clear existing content before adding new blogs
+blogSection.innerHTML = '';
+
 db.collection("blogs").get().then((blogs) => {
     blogs.forEach(blog => {
         if(blog.id != decodeURI(location.pathname.split("/").pop())){
             createBlog(blog);
         }
-    })
-})
+    });
+});
 
 const createBlog = (blog) => {
     let data = blog.data();
@@ -18,4 +21,4 @@ const createBlog = (blog) => {
         <a href="/${blog.id}" class="btn dark">read</a>
     </div>
     `;
-}
+};

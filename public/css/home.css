@@ -16,6 +16,12 @@ body {
     background: #1b1b1b;
     color: #fff;
 }
+.logo {
+    max-height: 40px; /* Set the maximum height to 40px */
+    height: auto;
+    width: auto;
+    object-fit: contain; /* Keeps the logo aspect ratio */
+}
 
 .navbar {
     width: 100%;

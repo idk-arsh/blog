@@ -1,4 +1,3 @@
-/* Global reset and body style */
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +8,10 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Dark background */
+    background-color: #121212;
     color: #f5f5f5;
 }
 
-/* Neon Color Animation - cycling through vibrant colors */
 @keyframes neonColorCycle {
     0% {
         box-shadow: 0 0 15px #00ff95, 0 0 30px #00ff95;
@@ -37,23 +35,15 @@ body {
     }
 }
 
-/* Neon Selection */
-::selection {
-    background: #00ff95;
-    color: #fff;
-}
-
-/* Banner */
 .banner {
     width: 100%;
     height: 400px;
     position: relative;
     background: linear-gradient(45deg, #00ff95, #00faff);
     box-shadow: 0 0 30px #00ff95;
-    animation: neonColorCycle 8s infinite; /* Apply color cycling */
+    animation: neonColorCycle 8s infinite;
 }
 
-/* Neon Upload Button */
 .banner-upload-btn {
     position: absolute;
     bottom: 20px;
@@ -70,109 +60,48 @@ body {
     animation: neonColorCycle 8s infinite;
 }
 
-.banner-upload-btn img {
-    width: 20px;
-    filter: invert(1);
-}
-
-/* Blog Container */
 .blog {
     width: 70vw;
     min-width: 400px;
     margin: auto;
     padding: 50px 0;
-    color: #f5f5f5;
 }
 
-/* Neon Textarea */
 .title,
 .article {
     width: 100%;
-    min-height: 100px;
-    outline: none;
-    font-size: 50px;
-    font-weight: 600;
-    background-color: #1e1e1e;
-    color: #f5f5f5;
-    border: none;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2), 0 0 15px #00ff95;
-    transition: background 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-.title::placeholder,
-.article::placeholder {
-    color: #00ff95;
-}
-
-/* Article Styles */
-.article {
-    height: 500px;
-    font-size: 20px;
-    margin-top: 20px;
-    line-height: 30px;
-    font-weight: 500;
-    padding-bottom: 100px;
-    white-space: pre-wrap;
-}
-
-/* Scrollbar for textarea */
-textarea::-webkit-scrollbar {
-    width: 10px;
-}
-
-textarea::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 149, 0.5);
-    border-radius: 10px;
-}
-
-/* Blog Options */
-.blog-options {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Button Styling */
-.btn {
-    border: none;
-    outline: none;
-    cursor: pointer;
+.publish-btn,
+.upload-btn {
     padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 14px;
-    text-transform: uppercase;
-    transition: background 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-/* Neon Green Button */
-.btn.grey {
-    background: #00ff95;
-    color: #000;
-    margin-left: 20px;
-    box-shadow: 0 0 15px #00ff95;
-}
-
-.btn.grey:hover {
-    background: #00faff;
-    box-shadow: 0 0 25px #00faff;
-}
-
-/* Dark Button */
 .btn.dark {
-    background: #1b1b1b;
-    color: #fff;
-    box-shadow: 0 0 15px #00ff95;
+    background-color: #bb86fc;
 }
 
 .btn.dark:hover {
-    background: #333;
-    box-shadow: 0 0 25px #00faff;
+    background-color: #3700b3;
+}
+
+.btn.grey {
+    background-color: #9e9e9e;
+}
+
+.btn.grey:hover {
+    background-color: #757575;
 }
